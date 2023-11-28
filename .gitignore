@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/SEDC.Lamazon.DataAccess/SEDC.Lamazon.DataAccess.csproj
