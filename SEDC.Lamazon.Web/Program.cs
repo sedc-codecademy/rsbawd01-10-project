@@ -1,5 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+
 using SEDC.Lamazon.DataAccess.Context;
+using SEDC.Lamazon.DataAccess.Implementations;
+using SEDC.Lamazon.DataAccess.Interfaces;
+
+using SEDC.Lamazon.Services.Implementations;
+using SEDC.Lamazon.Services.Interfaces;
 
 namespace SEDC.Lamazon.Web;
 
@@ -17,6 +23,14 @@ public class Program
         {
             options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=LamazonStoreDB;Trusted_Connection=True;");
         });
+
+        // https://www.c-sharpcorner.com/article/understanding-addtransient-vs-addscoped-vs-addsingleton-in-asp-net-core/
+
+        // Add DB Repository
+        builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
+
+        // Add Services
+        builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
 
         var app = builder.Build();
 
