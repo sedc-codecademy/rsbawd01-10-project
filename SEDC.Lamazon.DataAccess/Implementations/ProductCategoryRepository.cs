@@ -1,11 +1,6 @@
 ﻿using SEDC.Lamazon.DataAccess.Context;
 using SEDC.Lamazon.DataAccess.Interfaces;
 using SEDC.Lamazon.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SEDC.Lamazon.DataAccess.Implementations;
 

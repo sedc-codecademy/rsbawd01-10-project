@@ -24,4 +24,19 @@ public class ProductCategoryController : Controller
     {
         return View();
     }
+
+    [HttpPost]
+    public IActionResult Create([FromForm] ProductCategoryViewModel model) 
+    {
+        try
+        {
+            _productCategoryService.CreateProductCategory(model);
+            return RedirectToAction("Index");
+        }
+        catch (Exception)
+        {
+            //TODO Error page and logging info
+            return View("Error");
+        }
+    }
 }

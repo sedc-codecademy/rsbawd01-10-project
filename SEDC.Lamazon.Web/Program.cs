@@ -28,9 +28,11 @@ public class Program
 
         // Add DB Repository
         builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
+        builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
         // Add Services
         builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
+        builder.Services.AddScoped<IProductService, ProductService>();
 
         var app = builder.Build();
 
