@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 using SEDC.Lamazon.DataAccess.Context;
@@ -36,6 +37,16 @@ public class Program
         builder.Services.AddScoped<IProductService, ProductService>();
         builder.Services.AddScoped<IUserService, UserService>();
 
+        // Set authentification cookie type and settings
+        builder.Services
+            .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(opt => 
+            {
+                opt.ExpireTimeSpan = TimeSpan.FromMinutes(100);
+                opt.LoginPath = "/User/Login";
+                opt.AccessDeniedPath = "/Home/AccessDenied";
+            });
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
@@ -51,6 +62,8 @@ public class Program
 
         app.UseRouting();
 
+        // Use auth
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.MapControllerRoute(

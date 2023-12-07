@@ -83,6 +83,7 @@ public class UserRepository : IUserRepository
     {
         return _dbContext
             .Users
+            .Include(u => u.Role)
             .Where(u => u.Email == email)
             .FirstOrDefault();
     }
