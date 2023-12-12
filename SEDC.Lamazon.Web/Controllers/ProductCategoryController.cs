@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SEDC.Lamazon.Services.Interfaces;
 using SEDC.Lamazon.Services.ViewModels.ProductCategory;
 
 namespace SEDC.Lamazon.Web.Controllers;
 
+[Authorize(Roles = "Admin")]
 public class ProductCategoryController : Controller
 {
     private readonly IProductCategoryService _productCategoryService;

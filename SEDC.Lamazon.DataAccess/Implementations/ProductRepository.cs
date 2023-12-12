@@ -30,6 +30,7 @@ public class ProductRepository : IProductRepository
     {
         Product product = _lamazonDbContext
             .Products
+            .Include(x => x.ProductCategory)
             .Where(x => x.Id == id)
             .FirstOrDefault();
 

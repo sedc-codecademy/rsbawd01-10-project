@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SEDC.Lamazon.Services.Interfaces;
 using SEDC.Lamazon.Services.ViewModels.Product;
@@ -6,6 +7,7 @@ using SEDC.Lamazon.Services.ViewModels.ProductCategory;
 
 namespace SEDC.Lamazon.Web.Controllers;
 
+[Authorize(Roles = "Admin")]
 public class ProductController : Controller
 {
     private readonly IProductService _productService;
