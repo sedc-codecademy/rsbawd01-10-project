@@ -21,7 +21,7 @@ public class ProductCategoryController : Controller
 
         return View(response);
     }
-
+     
     public IActionResult Create() 
     {
         return View();

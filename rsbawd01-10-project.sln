@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.Lamazon.Web", "SEDC.Lamazon.Web\SEDC.Lamazon.Web.csproj", "{C86EA9F8-E0AF-4A8C-A206-A446BAB22FC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEDC.Lamazon.Web", "SEDC.Lamazon.Web\SEDC.Lamazon.Web.csproj", "{C86EA9F8-E0AF-4A8C-A206-A446BAB22FC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.Lamazon.Domain", "SEDC.Lamazon.Domain\SEDC.Lamazon.Domain.csproj", "{29A7AB71-66B0-4DD6-9795-C73E733F5DAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEDC.Lamazon.Domain", "SEDC.Lamazon.Domain\SEDC.Lamazon.Domain.csproj", "{29A7AB71-66B0-4DD6-9795-C73E733F5DAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.Lamazon.DataAccess", "SEDC.Lamazon.DataAccess\SEDC.Lamazon.DataAccess.csproj", "{6FCAB069-B4ED-4FEE-8D07-F6157F1C46C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEDC.Lamazon.DataAccess", "SEDC.Lamazon.DataAccess\SEDC.Lamazon.DataAccess.csproj", "{6FCAB069-B4ED-4FEE-8D07-F6157F1C46C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.Lamazon.Services", "SEDC.Lamazon.Services\SEDC.Lamazon.Services.csproj", "{969EE33E-241C-4451-8B6E-AD3D50290B2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEDC.Lamazon.Services", "SEDC.Lamazon.Services\SEDC.Lamazon.Services.csproj", "{969EE33E-241C-4451-8B6E-AD3D50290B2F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{76C00DE0-1091-4990-BEAD-B3845FCC65A0}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

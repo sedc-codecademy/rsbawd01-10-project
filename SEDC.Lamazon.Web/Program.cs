@@ -31,11 +31,15 @@ public class Program
         builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
         builder.Services.AddScoped<IProductRepository, ProductRepository>();
         builder.Services.AddScoped<IUserRepository, UserRepository>();
+        builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+        builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
 
         // Add Services
         builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
         builder.Services.AddScoped<IProductService, ProductService>();
         builder.Services.AddScoped<IUserService, UserService>();
+        builder.Services.AddScoped<IOrderService, OrderService>();
+        builder.Services.AddScoped<IOrderItemService, OrderItemService>();
 
         // Set authentification cookie type and settings
         builder.Services
