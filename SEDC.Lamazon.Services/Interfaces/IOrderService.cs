@@ -8,4 +8,5 @@ public interface IOrderService
     OrderViewModel GetOrderById(int id);
     void CreateOrder(OrderViewModel order);
     OrderViewModel GetActiveOrder(int userId);
+    OrderViewModel SubmitOrder(OrderViewModel order);
 }

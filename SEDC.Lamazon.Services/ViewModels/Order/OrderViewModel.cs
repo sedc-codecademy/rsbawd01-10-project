@@ -14,4 +14,13 @@ public class OrderViewModel
     public decimal TotalPrice { get; set; }
 
     public List<OrderItemViewModel> Items { get; set; }
+
+    // Shipping details
+    public string ShippingUserFullName { get; set; }
+    public string PhoneNumber { get; set; }
+    public string StreetAddress { get; set; }
+    public string City { get; set; }
+    public string State { get; set; }
+    public string PostalCode { get; set; }
+    public DateTime EstimatedShipingDate { get; set; }
 }

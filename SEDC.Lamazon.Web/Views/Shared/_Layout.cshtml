@@ -61,7 +61,7 @@
                     @if(User.IsInRole("User"))
                     {
                         <span class="label">
-                            <a class="nav-link text-dark"> <strong>( Cart Items ) </strong></a>
+                            <a asp-action="ShoppingCart" asp-controller="Order" class="nav-link text-dark"> <strong>( Cart Items ) </strong></a>
                         </span>
                     }
 

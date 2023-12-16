@@ -1,0 +1,121 @@
+﻿@using SEDC.Lamazon.Services.ViewModels.Order
+@using SEDC.Lamazon.Services.ViewModels.OrderItem
+
+@model OrderViewModel
+
+@using(Html.BeginForm("SummaryPost", "Order", FormMethod.Post)){
+
+    @Html.HiddenFor(o => o.Id)
+    @Html.HiddenFor(o => o.UserId)
+    @Html.HiddenFor(o => o.TotalPrice)
+    @Html.HiddenFor(o => o.OrderNumber)
+
+    <div class="container">
+        <div class="card">
+
+            <div class="card-header ml-0 py-4">
+                <div class="row px-4">
+                    <div class="col-6">
+                        <h5 class="pt-2">
+                            Order Summary
+                        </h5>
+                    </div>
+                    <div class="col-6 text-end">
+                        <a asp-action="ShoppingCart" class="btn btn-outline-danger btn-sm">Back to Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+
+                <div class="container p-2">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 pb-4">
+                            <div class="row">
+                                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="text-info">Shipping Details</span>
+                                </h4>
+                            </div>
+
+                            <div class="row my-1">
+                                <div class="form-group">
+                                    <label asp-for="ShippingUserFullName" class="control-label"></label>
+                                    <input asp-for="ShippingUserFullName" class="form-control"/>
+                                </div>
+                            </div>
+
+                            <div class="row my-1">
+                                <div class="form-group">
+                                    <label asp-for="PhoneNumber" class="control-label"></label>
+                                    <input asp-for="PhoneNumber" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="row my-1">
+                                <div class="form-group">
+                                    <label asp-for="StreetAddress" class="control-label"></label>
+                                    <input asp-for="StreetAddress" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="row my-1">
+                                <div class="form-group">
+                                    <label asp-for="City" class="control-label"></label>
+                                    <input asp-for="City" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="row my-1">
+                                <div class="form-group">
+                                    <label asp-for="State" class="control-label"></label>
+                                    <input asp-for="State" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="row my-1">
+                                <div class="form-group">
+                                    <label asp-for="PostalCode" class="control-label"></label>
+                                    <input asp-for="PostalCode" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-5 offset-lg-1">
+                            <h4 class="d-flex justify-content-between align-content-center mb-3">
+                                <span class="text-info">Order Summary</span>
+                            </h4>
+
+                            <ul class="list-group mb-3">
+
+                                @foreach (var item in Model.Items)
+                                {
+                                    <li class="list-group item d-flex justify-content-between">
+                                        <div>
+                                            <h6 class="my-0">@item.Product.Name</h6>
+                                            <small class="text-muted">Quantity: @item.Qty</small>
+                                        </div>
+
+                                        <span class="text-muted">@((item.Price * item.Qty).ToString("c"))</span>
+                                    </li>
+                                }
+
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <small class="text-info">Total (USD)</small>
+                                    <strong class="text-info">@Model.TotalPrice.ToString("c")</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <button type="submit" class="btn btn-primary form-control">Continue To Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
