@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SEDC.Lamazon.DataAccess.Context;
 
@@ -11,9 +12,10 @@ using SEDC.Lamazon.DataAccess.Context;
 namespace SEDC.Lamazon.DataAccess.Migrations
 {
     [DbContext(typeof(LamazonDbContext))]
-    partial class LamazonDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231219172800_OrderTableExtendedForNULLValues")]
+    partial class OrderTableExtendedForNULLValues
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

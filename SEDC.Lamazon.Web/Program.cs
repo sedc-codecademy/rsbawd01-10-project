@@ -7,6 +7,7 @@ using SEDC.Lamazon.DataAccess.Interfaces;
 
 using SEDC.Lamazon.Services.Implementations;
 using SEDC.Lamazon.Services.Interfaces;
+using Stripe;
 
 namespace SEDC.Lamazon.Web;
 
@@ -22,7 +23,7 @@ public class Program
         // Add DB Context
         builder.Services.AddDbContext<LamazonDbContext>(options => 
         {
-            options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=LamazonStoreDB;Trusted_Connection=True;");
+            options.UseSqlServer(builder.Configuration.GetSection("ConnectionStrings:Default").Get<string>());
         });
 
         // https://www.c-sharpcorner.com/article/understanding-addtransient-vs-addscoped-vs-addsingleton-in-asp-net-core/
@@ -36,7 +37,7 @@ public class Program
 
         // Add Services
         builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
-        builder.Services.AddScoped<IProductService, ProductService>();
+        builder.Services.AddScoped<IProductService, Services.Implementations.ProductService>();
         builder.Services.AddScoped<IUserService, UserService>();
         builder.Services.AddScoped<IOrderService, OrderService>();
         builder.Services.AddScoped<IOrderItemService, OrderItemService>();
@@ -63,6 +64,9 @@ public class Program
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();
+
+        // StripeConfiguration.ApiKey = "your key";
+        StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Get<string>();
 
         app.UseRouting();
 

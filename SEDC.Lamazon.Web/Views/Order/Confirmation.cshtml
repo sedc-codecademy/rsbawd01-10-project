@@ -1,9 +1,6 @@
-﻿@using SEDC.Lamazon.Services.ViewModels.Order
-@model OrderViewModel
-
-<div class="container row pt-4">
+﻿<div class="container row pt-4">
     <div class="col-12 text-center">
         <h2><strong>Order was submitted and payment was successful</strong></h2>
-        <h4>Your order number is: @Model.OrderNumber</h4>
+        <h4>Your order number is:@ViewData["orderNumber"]</h4>
     </div>
 </div>
