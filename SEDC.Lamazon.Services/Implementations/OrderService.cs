@@ -63,7 +63,6 @@ public class OrderService : IOrderService
                 }).ToList(),
 
                 City = activeOrder.City,
-                EstimatedShipingDate = activeOrder.EstimatedShipingDate.Value,
                 PhoneNumber = activeOrder.PhoneNumber,
                 State = activeOrder.State,
                 PostalCode = activeOrder.PostalCode,
